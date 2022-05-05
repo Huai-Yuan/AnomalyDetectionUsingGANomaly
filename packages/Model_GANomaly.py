@@ -71,10 +71,10 @@ class GANomaly(AdvLoss, CntLoss, EncLoss):
         x = tf.keras.layers.Conv2D( 4, 7, kernel_regularizer = 'l2')(x)        # [16, 16,  4]
         x = tf.keras.layers.BatchNormalization()(x)
         x = tf.keras.layers.LeakyReLU()(x)
-        x = tf.keras.layers.Conv2D( 8, 7, kernel_regularizer = 'l2')(x)       # [10, 10,  8]
+        x = tf.keras.layers.Conv2D( 8, 7, kernel_regularizer = 'l2')(x)        # [10, 10,  8]
         x = tf.keras.layers.BatchNormalization()(x)
         x = tf.keras.layers.LeakyReLU()(x)
-        x = tf.keras.layers.Conv2D(16, 7, kernel_regularizer = 'l2')(x)  # [ 4,  4, 16]
+        x = tf.keras.layers.Conv2D(16, 7, kernel_regularizer = 'l2')(x)        # [ 4,  4, 16]
         x = tf.keras.layers.BatchNormalization()(x)
         outputs = tf.keras.layers.LeakyReLU()(x)
         return tf.keras.Model(inputs, outputs)
